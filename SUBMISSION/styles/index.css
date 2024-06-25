@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar_container {
+    display: flex;
+    background-color: rgb(29, 24, 100);
+    padding: 10px; /* Padding untuk area navbar secara keseluruhan */
+    position: sticky;
+    z-index: 999;
+    justify-content: space-between;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+    /* margin: auto; */
+}
+
+.navbar a{
+    position: relative;
+    font-size: 1.3vmax;
+    align-content: center;
+    text-decoration: none;
+    color: white;
+}
+.navbar_container a img{
+    width: 3vmax;
+}
+
+.card{
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.content_container{
+    display: flex;
+    margin: 30px;
+    gap: 3vmax;
+}
+
+.content_main{
+    width: 84%;
+}
+
+.content_desc{
+    flex: 5;
+    padding: 0px 30px 30px 30px;
+    text-align: justify;
+}
+
+.content_desc strong{
+    font-size: 5vmax;
+}
+
+.content_desc  p {
+    font-size: 1.5vmax;
+    padding-top: 10px ;
+}
+
+.button{
+    margin-top: 40px;
+}
+
+.button a{
+    font-size: 1.6vmax;
+    background-color: rgb(29, 24, 100);
+    border-radius: 30px;
+    padding: 1.8%;
+    text-decoration: none;
+    color: white;
+}
+
+.prev, .next{
+    color:black;
+    border-radius: 50%;
+    width: 6vmax;
+    cursor: pointer;
+    position: absolute;
+    z-index: 22;
+}
+
+.prev{
+    transform: rotate(180deg);
+    left: 0;
+    margin-left: 20px;
+}
+
+.next{
+    right: 0;
+    margin-right:20px ;
+}
+
+.gallery_container{
+    position: relative;
+    display: flex;
+    padding: 90px 0px 20px 0px;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    /* justify-content: space-evenly; */
+}
+
+.slide_cont{
+    display: flex;
+    overflow-x: scroll;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+}
+
+.slide_cont::-webkit-scrollbar{
+    display: none;
+}
+
+.gallery_container h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 3vmax;
+}
+
+.gallery img{
+    width: 70%;
+    /* height: 7vmax; */
+    pointer-events: auto;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    border: solid black 1px;
+}
+
+.gallery{
+    display: flex;
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    scroll-snap-align: center;
+    position: relative;
+    text-align: center;
+}
+
+.gallery h3{
+    position: absolute;
+    bottom: 0px;
+    font-size: 1.6vmax;
+}
+
+.content_image {
+    padding: 30px;
+    align-self: center;
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: 15%;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color:rgb(29, 24, 100) ;
+}
+
+.content_image img{
+    padding: 7%;
+    /* border-radius: 50%; */
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.content_image p{
+    color: white;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 1.3vmax;
+    margin: auto;
+}
+
+.foot{
+    background-color: rgb(29, 24, 100);
+    padding: 20px;
+    color: white;
+    font-size: 1.4vmax;
+}
+
+.navbar > a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+}
+
+.navbar > a:hover::after{
+    width: 100%;
+}
+
+.button > a:hover{
+    background-color: white;
+    border: solid 2px rgb(29, 24, 100);
+    color: rgb(29, 24, 100);
+}
+
+@media screen and (max-width: 768px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .content_main{
+        width: 100%;
+    }
+    .content_image{
+        position: static;
+        width: 50%;
+        border-radius: 12px;
+    }
+    
+    .gallery_container {
+        padding-top: 50px;
+    }
+}
+
+@media  screen and (max-width: 440px) {
+    .prev, .next{
+        /* position: relative; */
+        width: 4vmax;
+        bottom : 35px;
+    }
+    .gallery_container h1{
+        margin-top: 15px;
+    }
+    .gallery img{
+        width: 70%;
+    }
+}
